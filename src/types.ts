@@ -92,3 +92,18 @@ export interface InterviewExp {
   content: string
   tags: string[]
 }
+
+/** 测评/笔试/AI面邀请（邮箱同步） */
+export interface Assessment {
+  id: string
+  company: string
+  title: string
+  type: '测评' | '笔试' | 'AI面'
+  deadline: string      // yyyy-MM-dd
+  deadlineTime?: string // HH:mm
+  source: string        // Gmail / QQ邮箱
+  link?: string
+  note?: string
+  done?: boolean        // 本地标记已完成
+  ignored?: boolean     // 本地标记忽略
+}

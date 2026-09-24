@@ -2,6 +2,7 @@ import { useState } from 'react'
 import type { Application, AppStatus } from '../types'
 import { APP_STATUSES, migrateStatus } from '../types'
 import { useStore, uid, today } from '../store'
+import AssessmentCenter from '../components/AssessmentCenter'
 
 const STATUS_COLOR: Record<AppStatus, string> = {
   待投递: 'bg-gray-100 text-gray-600', 已投递: 'bg-blue-100 text-blue-700',
@@ -82,6 +83,8 @@ export default function BoardPage() {
       </div>
 
       <button onClick={() => setAdding(!adding)} className="btn-primary w-full mb-3">+ 手动添加记录</button>
+
+      <AssessmentCenter />
 
       {adding && (
         <div className="card space-y-2 mb-4">
